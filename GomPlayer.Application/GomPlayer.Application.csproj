@@ -64,7 +64,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xCopy /r /y "$(TargetDir)*.dll" "$(SolutionDir)GomPlayer.Web\bin\"
+    <PostBuildEvent>xCopy /r /y "$(TargetDir)*.dll" "$(SolutionDir)GomPlayer.Web\bin\";
 xCopy /r /y "$(TargetDir)*.dll" "$(SolutionDir)GomPlayer.Api\bin\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
