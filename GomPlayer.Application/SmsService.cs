@@ -35,6 +35,25 @@ namespace GomPlayer.Application
                 };
                 this.repository.Create(ar);
             }
+            this.Context.Commit();
+        }
+
+
+        public IQueryable<SmsTransferObject> List(Guid? deviceID = null)
+        {
+            var list = from m in this.repository.FindAll()
+                       where m.DeviceID == (deviceID.HasValue ? deviceID : m.DeviceID)
+                       select new SmsTransferObject
+                       {
+                           ID = m.ID,
+                           Name = m.Name,
+                           Phone = m.Phone,
+                           Content = m.Content,
+                           SendDate = m.SendDate,
+                           Device_ID = m.DeviceID,
+                           DeviceID = m.Device.DeviceID
+                       };
+            return list;
         }
     }
 }

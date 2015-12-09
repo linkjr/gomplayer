@@ -9,6 +9,11 @@ namespace GomPlayer.TransferObjects
     public class SmsTransferObject
     {
         /// <summary>
+        /// 获取或设置ID。
+        /// </summary>
+        public Guid ID { get; set; }
+
+        /// <summary>
         /// 获取或设置发送人姓名。
         /// </summary>
         public string Name { get; set; }
@@ -27,6 +32,16 @@ namespace GomPlayer.TransferObjects
         /// 获取或设置送达时间。
         /// </summary>
         public DateTime SendDate { get; set; }
+
+        /// <summary>
+        /// 获取或设置设备ID。
+        /// </summary>
+        public Guid Device_ID { get; set; }
+
+        /// <summary>
+        /// 获取或设置设备编号。
+        /// </summary>
+        public string DeviceID { get; set; }
     }
 
     public class SyncSmsTransferObject

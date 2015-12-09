@@ -1,0 +1,43 @@
+﻿@model PagedList<DeviceTransferObject>
+
+@if (Model == null) { }
+else if (!Model.Any())
+{
+    <div>暂无数据</div>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>设备编号</th>
+            <th>Token</th>
+            <th>IMEI</th>
+            <th>同步日期</th>
+            <th>短信</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DeviceID</td>
+                <td>@item.DeviceToken</td>
+                <td>@item.Imei</td>
+                <td>@item.SyncDate.ToString("yyyy-MM-dd HH:ss")</td>
+                <td>
+                    <a href="@Url.Action("index", "sms", new { deviceid = item.ID })"><i class="glyphicon glyphicon-envelope"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+    <nav class="text-center">
+        @Ajax.Pager(Model,
+            new PagerOptions
+            {
+                PageIndexParameterName = "id",
+                ContainerTagName = "ul",
+                CssClass = "pagination",
+                PagerItemWrapperFormatString = "<li>{0}</li>",
+                CurrentPagerItemWrapperFormatString = "<li class='active'><a href='javascript:;'>{0}</a></li>",
+            },
+           new AjaxOptions { UpdateTargetId = "list" })
+    </nav>
+}

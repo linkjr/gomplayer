@@ -137,6 +137,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DeviceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PushController.cs" />
+    <Compile Include="Controllers\SmsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,6 +201,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Unity.config" />
     <Content Include="Views\Device\Index.cshtml" />
+    <Content Include="Views\Device\_ListPartial.cshtml" />
+    <Content Include="Views\Sms\Index.cshtml" />
+    <Content Include="Views\Sms\_ListPartial.cshtml" />
+    <Content Include="Views\Push\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,6 +223,10 @@
     <ProjectReference Include="..\GomPlayer.Infrastructure.Ioc\GomPlayer.Infrastructure.Ioc.csproj">
       <Project>{d13440f8-b6b9-429c-aab5-937bee38cec2}</Project>
       <Name>GomPlayer.Infrastructure.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GomPlayer.Infrastructure\GomPlayer.Infrastructure.csproj">
+      <Project>{60274981-09d2-4c15-b23e-b48df77ca1fa}</Project>
+      <Name>GomPlayer.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\GomPlayer.TransferObjects\GomPlayer.TransferObjects.csproj">
       <Project>{f5b58cfd-f5a9-44e5-968e-5054159f7e81}</Project>

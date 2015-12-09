@@ -53,6 +53,7 @@ namespace GomPlayer.Application
                 };
                 this.repository.Modify(ar);
             }
+            this.Context.Commit();
         }
 
 

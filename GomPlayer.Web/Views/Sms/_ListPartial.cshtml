@@ -1,0 +1,41 @@
+﻿@model PagedList<SmsTransferObject>
+
+@if (Model == null) { }
+else if (!Model.Any())
+{
+    <div>暂无数据</div>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>发送人</th>
+            <th>来电号码</th>
+            <th>内容</th>
+            <th>发送时间</th>
+            <th>设备编号</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Phone</td>
+                <td>@item.Content</td>
+                <td>@item.SendDate.ToString("yyyy-MM-dd HH:ss")</td>
+                <td>@item.DeviceID</td>
+            </tr>
+        }
+    </table>
+    <nav class="text-center">
+        @Ajax.Pager(Model,
+            new PagerOptions
+            {
+                PageIndexParameterName = "id",
+                ContainerTagName = "ul",
+                CssClass = "pagination",
+                PagerItemWrapperFormatString = "<li>{0}</li>",
+                CurrentPagerItemWrapperFormatString = "<li class='active'><a href='javascript:;'>{0}</a></li>",
+            },
+           new AjaxOptions { UpdateTargetId = "list" })
+    </nav>
+}

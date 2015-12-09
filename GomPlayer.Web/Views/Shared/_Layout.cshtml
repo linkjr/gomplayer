@@ -24,7 +24,8 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("设备管理", "index", "device")</li>
-                    <li>@Html.ActionLink("推送管理", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("短信管理", "index", "sms")</li>
+                    <li>@Html.ActionLink("推送管理", "index", "push")</li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
@@ -34,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+            <p>&copy; @DateTime.Now.Year - GomPlayer</p>
         </footer>
     </div>
 

@@ -345,6 +345,10 @@
       <Project>{56f1dad6-e759-4cf4-8add-47c6a08152ca}</Project>
       <Name>GomPlayer.IApplication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GomPlayer.Infrastructure.Ioc\GomPlayer.Infrastructure.Ioc.csproj">
+      <Project>{d13440f8-b6b9-429c-aab5-937bee38cec2}</Project>
+      <Name>GomPlayer.Infrastructure.Ioc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GomPlayer.Infrastructure.Repositories\GomPlayer.Infrastructure.Repositories.csproj">
       <Project>{2d02d339-9fc2-4eda-a5f4-a8a0a55b407d}</Project>
       <Name>GomPlayer.Infrastructure.Repositories</Name>

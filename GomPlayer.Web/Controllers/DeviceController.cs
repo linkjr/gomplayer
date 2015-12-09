@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GomPlayer.IApplication;
+using GomPlayer.Infrastructure.Paging;
 
 namespace GomPlayer.Web.Controllers
 {
@@ -21,10 +22,11 @@ namespace GomPlayer.Web.Controllers
         }
 
         // GET: Device
-        public ActionResult Index()
+        public ActionResult Index(int id = 1)
         {
-            var list = this.deviceService.List();
-            //return list;
+            var list = this.deviceService.List().ToPagedList(id, 10);
+            if (Request.IsAjaxRequest())
+                return PartialView("_ListPartial", list);
             return View(list);
         }
     }

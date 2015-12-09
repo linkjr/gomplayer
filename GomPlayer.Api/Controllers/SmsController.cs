@@ -16,10 +16,10 @@ namespace GomPlayer.Api.Controllers
         /// <summary>
         /// 初始化 <c>SmsController</c> 类的新实例。
         /// </summary>
-        /// <param name="deviceService"></param>
-        public SmsController(ISmsService deviceService)
+        /// <param name="smsService"></param>
+        public SmsController(ISmsService smsService)
         {
-            this.smsService = deviceService;
+            this.smsService = smsService;
         }
 
         /// <summary>
