@@ -27,14 +27,17 @@ namespace GomPlayer.Infrastructure.Repositories.EntityFramework.EntityTypeConfig
                 .HasMaxLength(100)
                 .IsRequired();
             base.Property(m => m.Phone)
-                .HasMaxLength(11)
-                .IsRequired();
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(11);
+            base.Property(m => m.Model)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(50);
             base.Property(m => m.Imei)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(50);
             base.Property(m => m.Version)
-                .HasMaxLength(10)
-                .IsRequired();
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(10);
 
             base.HasMany(m => m.SmsList)
                 .WithRequired(m => m.Device)
