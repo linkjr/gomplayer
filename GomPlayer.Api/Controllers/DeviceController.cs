@@ -29,7 +29,8 @@ namespace GomPlayer.Api.Controllers
         /// 同步设备信息。
         /// </summary>
         /// <param name="dataObject">设备的传输对象。</param>
-        public object Sync(SyncDeviceTransferObject dataObject)
+        [HttpPost]
+        public object Sync([FromBody]SyncDeviceTransferObject dataObject)
         {
             this.deviceService.Sync(dataObject);
             return Json(new { msg = "同步成功", result = true });

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 using GomPlayer.IApplication;
 using GomPlayer.TransferObjects;
 
@@ -28,6 +27,7 @@ namespace GomPlayer.Api.Controllers
         /// </summary>
         /// <param name="list">短信列表。</param>
         /// <param name="deviceID">设备编号。</param>
+        [HttpPost]
         public object Sync(IEnumerable<SyncSmsTransferObject> list, string deviceID)
         {
             this.smsService.Sync(list, deviceID);
