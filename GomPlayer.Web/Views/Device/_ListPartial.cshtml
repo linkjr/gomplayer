@@ -11,7 +11,6 @@ else
         <tr>
             <th>设备编号</th>
             <th>Token</th>
-            <th>IMEI</th>
             <th>同步日期</th>
             <th>短信</th>
         </tr>
@@ -20,7 +19,6 @@ else
             <tr>
                 <td>@item.DeviceID</td>
                 <td>@item.DeviceToken</td>
-                <td>@item.Imei</td>
                 <td>@item.SyncDate.ToString("yyyy-MM-dd HH:ss")</td>
                 <td>
                     <a href="@Url.Action("index", "sms", new { deviceid = item.ID })"><i class="glyphicon glyphicon-envelope"></i></a>
