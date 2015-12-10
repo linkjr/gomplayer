@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceTransferObject.cs" />
+    <Compile Include="PushTransferObject.cs" />
     <Compile Include="SmsTransferObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

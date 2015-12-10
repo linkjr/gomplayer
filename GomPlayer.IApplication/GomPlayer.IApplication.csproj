@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IApplicationService.cs" />
     <Compile Include="IDeviceService.cs" />
+    <Compile Include="IPushService.cs" />
     <Compile Include="ISmsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
