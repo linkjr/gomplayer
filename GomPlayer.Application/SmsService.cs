@@ -12,28 +12,29 @@ namespace GomPlayer.Application
 {
     public class SmsService : ApplicationService, ISmsService
     {
-        private readonly ISmsRepository repository;
+        private readonly ISmsRepository _smsRepository;
+        private readonly IDeviceRepository _deviceRepository;
 
         public SmsService(
             IRepositoryContext context,
-            ISmsRepository repository)
+            ISmsRepository smsRepository,
+            IDeviceRepository deviceRepository)
             : base(context)
         {
-            this.repository = repository;
+            this._smsRepository = smsRepository;
+            this._deviceRepository = deviceRepository;
         }
 
-        public void Sync(IEnumerable<SyncSmsTransferObject> list)
+        public void Sync(IEnumerable<SyncSmsTransferObject> list, string deviceID)
         {
+            var device = this._deviceRepository.FindAll().FirstOrDefault(m => m.DeviceID == deviceID);
+            if (device == null)
+                throw new Exception("设备不存在");
+
             foreach (var sms in list)
             {
-                var ar = new Sms
-                {
-                    Name = sms.Name,
-                    Phone = sms.Phone,
-                    Content = sms.Content,
-                    SendDate = sms.SendDate
-                };
-                this.repository.Create(ar);
+                var ar = new Sms(sms.Name, sms.Phone, sms.Content, sms.SendDate, device.ID);
+                this._smsRepository.Create(ar);
             }
             this.Context.Commit();
         }
@@ -41,7 +42,7 @@ namespace GomPlayer.Application
 
         public IQueryable<SmsTransferObject> List(Guid? deviceID = null)
         {
-            var list = from m in this.repository.FindAll()
+            var list = from m in this._smsRepository.FindAll()
                        where m.DeviceID == (deviceID.HasValue ? deviceID : m.DeviceID)
                        select new SmsTransferObject
                        {

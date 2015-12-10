@@ -9,7 +9,7 @@ namespace GomPlayer.IApplication
 {
     public interface ISmsService : IApplicationService
     {
-        void Sync(IEnumerable<SyncSmsTransferObject> list);
+        void Sync(IEnumerable<SyncSmsTransferObject> list, string deviceID);
 
         IQueryable<SmsTransferObject> List(Guid? deviceID = null);
     }

@@ -27,30 +27,12 @@ namespace GomPlayer.Application
             var ar = this.repository.FindAll().FirstOrDefault(m => m.DeviceID == dataObject.DeviceID);
             if (ar == null)
             {
-                ar = new Device
-                {
-                    DeviceID = dataObject.DeviceID,
-                    DeviceToken = dataObject.DeviceToken,
-                    Phone = dataObject.Phone,
-                    Model = dataObject.Model,
-                    Imei = dataObject.Imei,
-                    Version = dataObject.Version,
-                    SyncDate = DateTime.Now
-                };
+                ar = new Device(dataObject.DeviceID, dataObject.DeviceToken, dataObject.Phone, dataObject.Model, dataObject.Imei, dataObject.Version);
                 this.repository.Create(ar);
             }
             else
             {
-                ar = new Device
-                {
-                    DeviceID = dataObject.DeviceID,
-                    DeviceToken = dataObject.DeviceToken,
-                    Phone = dataObject.Phone,
-                    Model = dataObject.Model,
-                    Imei = dataObject.Imei,
-                    Version = dataObject.Version,
-                    SyncDate = DateTime.Now
-                };
+                ar.Sync(dataObject.DeviceID, dataObject.DeviceToken, dataObject.Phone, dataObject.Model, dataObject.Imei, dataObject.Version);
                 this.repository.Modify(ar);
             }
             this.Context.Commit();
