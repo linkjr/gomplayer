@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Unity.WebApi;
+using GomPlayer.Infrastructure.Ioc;
 
 namespace GomPlayer.Api
 {
@@ -21,8 +21,7 @@ namespace GomPlayer.Api
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //ServiceLocator.Instance.Container.RegisterType<IControllerFactory, UnityControllerFactory>();
-            UnityConfig.RegisterComponents();
-            //DependencyResolver.SetResolver(new UnityDependencyResolver(ServiceLocator.Instance.Container));
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(ServiceLocator.Instance.Container);
         }
     }
 }
