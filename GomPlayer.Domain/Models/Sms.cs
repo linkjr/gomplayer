@@ -11,6 +11,23 @@ namespace GomPlayer.Domain.Models
     /// </summary>
     public class Sms : AggregateRoot
     {
+        #region ctor
+
+        protected Sms() { }
+
+        public Sms(string name, string phone, string content, DateTime sendDate, Guid deviceID)
+        {
+            this.Name = name;
+            this.Phone = phone;
+            this.Content = content;
+            this.SendDate = sendDate;
+            this.DeviceID = deviceID;
+        }
+
+        #endregion
+
+        #region Properties
+
         /// <summary>
         /// 获取或设置发送人姓名。
         /// </summary>
@@ -45,5 +62,7 @@ namespace GomPlayer.Domain.Models
         /// 获取或设置所属设备。
         /// </summary>
         public virtual Device Device { get; set; }
+
+        #endregion
     }
 }

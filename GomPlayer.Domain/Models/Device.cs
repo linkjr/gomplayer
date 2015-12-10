@@ -11,6 +11,26 @@ namespace GomPlayer.Domain.Models
     /// </summary>
     public class Device : AggregateRoot
     {
+        #region ctor
+
+        protected Device() { }
+
+        public Device(string deviceID, string deviceToken, string phone, string model, string imei, string version)
+        {
+            this.DeviceID = deviceID;
+            this.DeviceToken = deviceToken;
+            this.Phone = phone;
+            this.Model = model;
+            this.Imei = imei;
+            this.Version = version;
+            this.SyncDate = DateTime.Now;
+            this.CreateDate = DateTime.Now;
+        }
+
+        #endregion
+
+        #region Properties
+
         /// <summary>
         /// 获取或设置设备ID。
         /// </summary>
@@ -55,5 +75,22 @@ namespace GomPlayer.Domain.Models
         /// 获取或设置短信列表。
         /// </summary>
         public IList<Sms> SmsList { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        public void Sync(string deviceID, string deviceToken, string phone, string model, string imei, string version)
+        {
+            this.DeviceID = deviceID;
+            this.DeviceToken = deviceToken;
+            this.Phone = phone;
+            this.Model = model;
+            this.Imei = imei;
+            this.Version = version;
+            this.SyncDate = DateTime.Now;
+        }
+
+        #endregion
     }
 }
