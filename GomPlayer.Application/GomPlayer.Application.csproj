@@ -37,8 +37,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tang.Infrastructure.Net">
-      <HintPath>..\..\Tang\Tang.Infrastructure\Tang.Infrastructure.Net\bin\Debug\Tang.Infrastructure.Net.dll</HintPath>
+    <Reference Include="Tang.Infrastructure.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Tang\Tang.Infrastructure\Tang.Infrastructure.Net\bin\Debug\Tang.Infrastructure.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

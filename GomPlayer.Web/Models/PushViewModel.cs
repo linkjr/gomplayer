@@ -17,6 +17,7 @@ namespace GomPlayer.Web.Models
         public string WebUrl { get; set; }
 
         [Display(Name = "Apk地址")]
+        [Required(ErrorMessage = "请输入{0}")]
         public string ApkUrl { get; set; }
     }
 }
