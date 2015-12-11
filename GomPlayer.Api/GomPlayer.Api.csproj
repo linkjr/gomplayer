@@ -330,14 +330,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GomPlayer.Application\GomPlayer.Application.csproj">
-      <Project>{8d7cdf97-7865-4e9c-8127-8f3bc2e82d73}</Project>
-      <Name>GomPlayer.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GomPlayer.Domain\GomPlayer.Domain.csproj">
-      <Project>{b45d57c1-5adc-4541-9754-3322ab7a2112}</Project>
-      <Name>GomPlayer.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GomPlayer.IApplication\GomPlayer.IApplication.csproj">
       <Project>{56f1dad6-e759-4cf4-8add-47c6a08152ca}</Project>
       <Name>GomPlayer.IApplication</Name>
@@ -345,10 +337,6 @@
     <ProjectReference Include="..\GomPlayer.Infrastructure.Ioc\GomPlayer.Infrastructure.Ioc.csproj">
       <Project>{d13440f8-b6b9-429c-aab5-937bee38cec2}</Project>
       <Name>GomPlayer.Infrastructure.Ioc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GomPlayer.Infrastructure.Repositories\GomPlayer.Infrastructure.Repositories.csproj">
-      <Project>{2d02d339-9fc2-4eda-a5f4-a8a0a55b407d}</Project>
-      <Name>GomPlayer.Infrastructure.Repositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\GomPlayer.Infrastructure\GomPlayer.Infrastructure.csproj">
       <Project>{60274981-09d2-4c15-b23e-b48df77ca1fa}</Project>
