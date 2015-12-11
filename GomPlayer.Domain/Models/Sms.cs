@@ -22,6 +22,7 @@ namespace GomPlayer.Domain.Models
             this.Content = content;
             this.SendDate = sendDate;
             this.DeviceID = deviceID;
+            this.CreateDate = DateTime.Now;
         }
 
         #endregion
