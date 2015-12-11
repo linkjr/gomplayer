@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GomPlayer.Domain.Models;
 using GomPlayer.Domain.Repositories;
 using GomPlayer.IApplication;
+using GomPlayer.Infrastructure;
 using GomPlayer.TransferObjects;
 
 namespace GomPlayer.Application
@@ -24,6 +25,15 @@ namespace GomPlayer.Application
 
         public void Sync(SyncDeviceTransferObject dataObject)
         {
+            if (dataObject == null)
+                throw new Exception("dataObject为空");
+            if (!string.IsNullOrEmpty(dataObject.Phone))
+                if (!dataObject.Phone.IsPhone())
+                    throw new Exception("电话格式不正确");
+            if (!string.IsNullOrEmpty(dataObject.Version))
+                if (dataObject.Version.Length > 10)
+                    throw new Exception("版本长度超过10");
+
             var ar = this.repository.FindAll().FirstOrDefault(m => m.DeviceID == dataObject.DeviceID);
             if (ar == null)
             {

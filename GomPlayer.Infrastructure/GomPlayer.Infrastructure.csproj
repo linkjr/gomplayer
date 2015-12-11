@@ -78,6 +78,7 @@
     <Compile Include="Paging\PagerItem.cs" />
     <Compile Include="Paging\PagerOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegularHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
