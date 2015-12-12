@@ -25,7 +25,7 @@ else
                     <a href="@Url.Action("index", "sms", new { deviceid = item.ID })"><i class="glyphicon glyphicon-envelope"></i></a>
                 </td>
                 <td>
-                    <a href="@Url.Action("index", "push", new { token = item.ID })"><i class="glyphicon glyphicon-plane"></i></a>
+                    <a href="@Url.Action("index", "push", new { token = item.DeviceToken })"><i class="glyphicon glyphicon-plane"></i></a>
                 </td>
             </tr>
         }
