@@ -19,7 +19,7 @@ namespace GomPlayer.Web.Controllers
         }
 
         // GET: Push
-        public ActionResult Index()
+        public ActionResult Index(string token)
         {
             return View();
         }

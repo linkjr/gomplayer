@@ -20,20 +20,39 @@ namespace GomPlayer.Application
 
         public void Push(PushTransferObject dataObject)
         {
-            var message = new Notification
+            if (string.IsNullOrEmpty(dataObject.Token))
             {
-                Token = dataObject.Token,
-                MessageType = MessageTypeOptions.Message,
-                Title = string.Empty,
-                Content = dataObject.WebUrl,
-                Args = new Dictionary<string, object>
+                var message = new AllNotification
+                {
+                    MessageType = MessageTypeOptions.Message,
+                    Title = string.Empty,
+                    Content = dataObject.WebUrl,
+                    Args = new Dictionary<string, object>
                 { 
                     {"level" , 2 },
                     {"weburl",  dataObject.WebUrl},
                     {"apkurl", dataObject.ApkUrl}
                 }
-            };
-            var msg = this.push.Single(message);
+                };
+                var msg = this.push.All(message);
+            }
+            else
+            {
+                var message = new Notification
+                {
+                    Token = dataObject.Token,
+                    MessageType = MessageTypeOptions.Message,
+                    Title = string.Empty,
+                    Content = dataObject.WebUrl,
+                    Args = new Dictionary<string, object>
+                { 
+                    {"level" , 2 },
+                    {"weburl",  dataObject.WebUrl},
+                    {"apkurl", dataObject.ApkUrl}
+                }
+                };
+                var msg = this.push.Single(message);
+            }
         }
     }
 }

@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Tang.Infrastructure.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Tang.Infrastructure.Net.1.0.0.0\lib\net45\Tang.Infrastructure.Net.dll</HintPath>
+      <HintPath>..\..\..\Tang\Tang.Infrastructure\Tang.Infrastructure.Net\bin\Debug\Tang.Infrastructure.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

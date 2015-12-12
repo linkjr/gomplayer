@@ -13,6 +13,7 @@ else
             <th>Token</th>
             <th>同步日期</th>
             <th>短信</th>
+            <th>推送</th>
         </tr>
         @foreach (var item in Model)
         {
@@ -22,6 +23,9 @@ else
                 <td>@item.SyncDate.ToString("yyyy-MM-dd HH:ss")</td>
                 <td>
                     <a href="@Url.Action("index", "sms", new { deviceid = item.ID })"><i class="glyphicon glyphicon-envelope"></i></a>
+                </td>
+                <td>
+                    <a href="@Url.Action("index", "push", new { token = item.ID })"><i class="glyphicon glyphicon-plane"></i></a>
                 </td>
             </tr>
         }

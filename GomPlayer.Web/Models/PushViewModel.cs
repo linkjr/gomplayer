@@ -8,8 +8,8 @@ namespace GomPlayer.Web.Models
 {
     public class PushViewModel
     {
-        [Display(Name = "设备编号")]
-        [Required(ErrorMessage = "请输入{0}")]
+        [Display(Name = "设备Token")]
+        //[Required(ErrorMessage = "请输入{0}")]
         public string Token { get; set; }
 
         [Display(Name = "Web地址")]

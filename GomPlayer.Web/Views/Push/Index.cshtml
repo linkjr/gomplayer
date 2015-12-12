@@ -1,45 +1,67 @@
 ﻿@model PushViewModel
-    @{
-        ViewBag.Title = "推送消息";
-    }
+@{
+    ViewBag.Title = "推送消息";
+}
 
-    <ol class="breadcrumb">
-        <li>@Html.ActionLink("首页", "index", "home")</li>
-        <li>@Html.ActionLink("推送管理", "index")</li>
-        <li class="active">@ViewBag.Title</li>
-    </ol>
-    <div class="row">
-        <div class="form-horizontal">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Token, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Token, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Token, "", new { @class = "text-danger" })
-                    </div>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("首页", "index", "home")</li>
+    <li>@Html.ActionLink("推送管理", "index")</li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="row">
+    <div class="form-horizontal">
+        @using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "success" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Token, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Token, new { @class = "form-control", placeholder="设备Token，不填表示推送全部" })
+                    @Html.ValidationMessageFor(m => m.Token, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.WebUrl, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.WebUrl, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.WebUrl, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WebUrl, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.WebUrl, new { @class = "form-control", placeholder = "网页地址" })
+                    @Html.ValidationMessageFor(m => m.WebUrl, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.ApkUrl, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.ApkUrl, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.ApkUrl, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ApkUrl, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.ApkUrl, new { @class = "form-control", placeholder = "应用地址" })
+                    @Html.ValidationMessageFor(m => m.ApkUrl, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="推送" class="btn btn-default" />
-                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="推送" class="btn btn-default" />
                 </div>
-            }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="modal-content">
+                    推送成功
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        var success = function () {
+            $("#modal").modal();
+        }
+    </script>
+}
