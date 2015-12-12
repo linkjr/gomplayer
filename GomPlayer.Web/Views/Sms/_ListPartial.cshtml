@@ -13,6 +13,7 @@ else
             <th>来电号码</th>
             <th>内容</th>
             <th>发送时间</th>
+            <th>接收人号码</th>
             <th>设备编号</th>
         </tr>
         @foreach (var item in Model)
@@ -20,8 +21,9 @@ else
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Phone</td>
-                <td>@item.Content</td>
+                <td>@Html.Raw(item.Content)</td>
                 <td>@item.SendDate.ToString("yyyy-MM-dd HH:ss")</td>
+                <td>@item.ReceivePhone</td>
                 <td>@item.DeviceID</td>
             </tr>
         }

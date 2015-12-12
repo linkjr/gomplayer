@@ -28,7 +28,7 @@ namespace GomPlayer.Infrastructure.Repositories.EntityFramework.EntityTypeConfig
                 .IsRequired();
             base.Property(m => m.Phone)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(11);
+                .HasMaxLength(50);
             base.Property(m => m.Model)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(50);

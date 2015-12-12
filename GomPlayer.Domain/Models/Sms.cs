@@ -15,12 +15,13 @@ namespace GomPlayer.Domain.Models
 
         protected Sms() { }
 
-        public Sms(string name, string phone, string content, DateTime sendDate, Guid deviceID)
+        public Sms(string name, string phone, string content, DateTime sendDate, string receivePhone, Guid deviceID)
         {
             this.Name = name;
             this.Phone = phone;
             this.Content = content;
             this.SendDate = sendDate;
+            this.ReceivePhone = receivePhone;
             this.DeviceID = deviceID;
             this.CreateDate = DateTime.Now;
         }
@@ -48,6 +49,11 @@ namespace GomPlayer.Domain.Models
         /// 获取或设置送达时间。
         /// </summary>
         public DateTime SendDate { get; set; }
+
+        /// <summary>
+        /// 获取或设置接收人电话。
+        /// </summary>
+        public string ReceivePhone { get; set; }
 
         /// <summary>
         /// 获取或设置设备ID。

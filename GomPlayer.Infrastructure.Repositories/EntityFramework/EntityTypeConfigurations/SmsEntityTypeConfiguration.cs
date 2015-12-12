@@ -31,6 +31,9 @@ namespace GomPlayer.Infrastructure.Repositories.EntityFramework.EntityTypeConfig
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(1000)
                 .IsRequired();
+            base.Property(m => m.ReceivePhone)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(50);
 
             base.HasRequired(m => m.Device)
                 .WithMany(m => m.SmsList)

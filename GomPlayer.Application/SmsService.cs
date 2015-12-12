@@ -33,7 +33,7 @@ namespace GomPlayer.Application
 
             foreach (var sms in list)
             {
-                var ar = new Sms(sms.Name, sms.Phone, sms.Content, sms.SendDate, device.ID);
+                var ar = new Sms(sms.Name, sms.Phone, sms.Content, sms.SendDate, sms.ReceivePhone, device.ID);
                 this._smsRepository.Create(ar);
             }
             this.Context.Commit();
@@ -52,6 +52,7 @@ namespace GomPlayer.Application
                            Content = m.Content,
                            SendDate = m.SendDate,
                            Device_ID = m.DeviceID,
+                           ReceivePhone = m.ReceivePhone,
                            DeviceID = m.Device.DeviceID
                        };
             return list;
