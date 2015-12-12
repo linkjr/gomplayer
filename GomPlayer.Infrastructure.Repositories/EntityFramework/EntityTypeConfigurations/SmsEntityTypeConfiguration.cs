@@ -29,7 +29,7 @@ namespace GomPlayer.Infrastructure.Repositories.EntityFramework.EntityTypeConfig
                 .IsRequired();
             base.Property(m => m.Content)
                 .HasColumnType("NVARCHAR")
-                .HasMaxLength(100)
+                .HasMaxLength(1000)
                 .IsRequired();
 
             base.HasRequired(m => m.Device)
