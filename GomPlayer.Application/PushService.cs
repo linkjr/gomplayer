@@ -38,7 +38,7 @@ namespace GomPlayer.Application
             }
             else
             {
-                var message = new Notification
+                var message = new SingleNotification
                 {
                     Token = dataObject.Token,
                     MessageType = MessageTypeOptions.Message,
