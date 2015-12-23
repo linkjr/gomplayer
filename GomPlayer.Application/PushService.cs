@@ -24,9 +24,10 @@ namespace GomPlayer.Application
             {
                 var message = new AllNotification
                 {
-                    MessageType = MessageTypeOptions.Message,
+                    MessageType = MessageTypeOptions.Notice,
                     Title = string.Empty,
                     Content = dataObject.WebUrl,
+                    Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
                 { 
                     {"level" , 2 },
@@ -41,9 +42,10 @@ namespace GomPlayer.Application
                 var message = new SingleNotification
                 {
                     Token = dataObject.Token,
-                    MessageType = MessageTypeOptions.Message,
+                    MessageType = MessageTypeOptions.Notice,
                     Title = string.Empty,
                     Content = dataObject.WebUrl,
+                    Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
                 { 
                     {"level" , 2 },
