@@ -35,11 +35,13 @@ namespace GomPlayer.Web.Controllers
             var dataObject = new PushTransferObject
             {
                 Token = model.Token,
+                Title = model.Title,
+                Content = model.Content,
                 WebUrl = model.WebUrl,
                 ApkUrl = model.ApkUrl
             };
             this._pushService.Push(dataObject);
-            return View();
+            return Json(new { result = true, msg = "推送成功" });
         }
     }
 }

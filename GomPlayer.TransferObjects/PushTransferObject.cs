@@ -10,6 +10,10 @@ namespace GomPlayer.TransferObjects
     {
         public string Token { get; set; }
 
+        public string Title { get; set; }
+
+        public string Content { get; set; }
+
         public string WebUrl { get; set; }
 
         public string ApkUrl { get; set; }

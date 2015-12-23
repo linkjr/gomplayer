@@ -12,6 +12,14 @@ namespace GomPlayer.Web.Models
         //[Required(ErrorMessage = "请输入{0}")]
         public string Token { get; set; }
 
+        [Display(Name = "推送标题")]
+        [Required(ErrorMessage = "请输入{0}")]
+        public string Title { get; set; }
+
+        [Display(Name = "推送内容")]
+        [Required(ErrorMessage = "请输入{0}")]
+        public string Content { get; set; }
+
         [Display(Name = "Web地址")]
         [Required(ErrorMessage = "请输入{0}")]
         public string WebUrl { get; set; }

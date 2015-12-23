@@ -17,8 +17,22 @@
             <div class="form-group">
                 @Html.LabelFor(m => m.Token, new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Token, new { @class = "form-control", placeholder="设备Token，不填表示推送全部" })
+                    @Html.TextBoxFor(m => m.Token, new { @class = "form-control", placeholder = "设备Token，不填表示推送全部" })
                     @Html.ValidationMessageFor(m => m.Token, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "推送标题" })
+                    @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Content, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Content, new { @class = "form-control", placeholder = "推送内容" })
+                    @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
@@ -60,7 +74,7 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script type="text/javascript">
-        var success = function () {
+        var success = function (data) {
             $("#modal").modal();
         }
     </script>
