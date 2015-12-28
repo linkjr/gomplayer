@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "推送消息";
 }
-
 <ol class="breadcrumb">
     <li>@Html.ActionLink("首页", "index", "home")</li>
     <li>@Html.ActionLink("推送管理", "index")</li>
@@ -57,7 +56,6 @@
         }
     </div>
 </div>
-
 <div class="modal fade" id="modal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -69,13 +67,12 @@
         </div>
     </div>
 </div>
-
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval")
-
     <script type="text/javascript">
         var success = function (data) {
-            $("#modal").modal();
+            if (data.result)
+                $("#modal").modal();
         }
     </script>
 }
