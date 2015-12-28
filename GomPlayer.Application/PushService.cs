@@ -26,7 +26,7 @@ namespace GomPlayer.Application
                 {
                     MessageType = MessageTypeOptions.Notice,
                     Title = dataObject.Title,
-                    Content = dataObject.WebUrl,
+                    Content = dataObject.Content,
                     Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
                 { 
@@ -44,7 +44,7 @@ namespace GomPlayer.Application
                     Token = dataObject.Token,
                     MessageType = MessageTypeOptions.Notice,
                     Title = dataObject.Title,
-                    Content = dataObject.WebUrl,
+                    Content = dataObject.Content,
                     Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
                 { 
