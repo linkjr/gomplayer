@@ -52,6 +52,7 @@ namespace GomPlayer.Application
         public IQueryable<DeviceTransferObject> List()
         {
             var list = from m in this.repository.FindAll()
+                       orderby m.CreateDate descending
                        select new DeviceTransferObject
                        {
                            ID = m.ID,

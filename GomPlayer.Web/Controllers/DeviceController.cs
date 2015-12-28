@@ -24,7 +24,7 @@ namespace GomPlayer.Web.Controllers
         // GET: Device
         public ActionResult Index(int id = 1)
         {
-            var list = this.deviceService.List().ToPagedList(id, 10);
+            var list = this.deviceService.List().ToPagedList(id, 20);
             if (Request.IsAjaxRequest())
                 return PartialView("_ListPartial", list);
             return View(list);

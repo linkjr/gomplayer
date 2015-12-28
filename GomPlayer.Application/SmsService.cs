@@ -44,6 +44,7 @@ namespace GomPlayer.Application
         {
             var list = from m in this._smsRepository.FindAll()
                        where m.DeviceID == (deviceID.HasValue ? deviceID : m.DeviceID)
+                       orderby m.SendDate descending
                        select new SmsTransferObject
                        {
                            ID = m.ID,
