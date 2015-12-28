@@ -49,6 +49,16 @@ namespace GomPlayer.Application
         }
 
 
+        public void Delete(Guid id)
+        {
+            var ar = this.repository.Find(id);
+            if (ar == null)
+                throw new Exception("设备不存在");
+            this.repository.Remove(ar);
+            base.Context.Commit();
+        }
+
+
         public IQueryable<DeviceTransferObject> List()
         {
             var list = from m in this.repository.FindAll()
@@ -62,7 +72,8 @@ namespace GomPlayer.Application
                            Model = m.Model,
                            Imei = m.Imei,
                            Version = m.Version,
-                           SyncDate = m.SyncDate
+                           SyncDate = m.SyncDate,
+                           SmsCount = m.SmsList.Count
                        };
             return list;
         }

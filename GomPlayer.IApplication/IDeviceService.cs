@@ -11,6 +11,8 @@ namespace GomPlayer.IApplication
     {
         void Sync(SyncDeviceTransferObject dataObject);
 
+        void Delete(Guid id);
+
         IQueryable<DeviceTransferObject> List();
     }
 }

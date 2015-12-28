@@ -47,6 +47,11 @@ namespace GomPlayer.TransferObjects
         /// 获取或设置同步日期。
         /// </summary>
         public DateTime SyncDate { get; set; }
+
+        /// <summary>
+        /// 获取或设置短信条数。
+        /// </summary>
+        public int SmsCount { get; set; }
     }
 
     public class SyncDeviceTransferObject

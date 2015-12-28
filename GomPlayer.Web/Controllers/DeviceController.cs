@@ -29,5 +29,14 @@ namespace GomPlayer.Web.Controllers
                 return PartialView("_ListPartial", list);
             return View(list);
         }
+
+        public ActionResult Delete(Guid id)
+        {
+            this.deviceService.Delete(id);
+            if (!Request.IsAjaxRequest())
+                return Redirect(Request.RawUrl);
+            else
+                return Json(new { result = true, msg = "删除成功" });
+        }
     }
 }
