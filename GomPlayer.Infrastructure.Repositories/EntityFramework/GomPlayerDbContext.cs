@@ -22,6 +22,7 @@ namespace GomPlayer.Infrastructure.Repositories.EntityFramework
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new UserEntityTypeConfiguration());
             modelBuilder.Configurations.Add(new DeviceEntityTypeConfiguration());
             modelBuilder.Configurations.Add(new SmsEntityTypeConfiguration());
             modelBuilder.Properties<byte[]>()

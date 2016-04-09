@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="EntityFramework\DeviceRepository.cs" />
     <Compile Include="EntityFramework\EntityTypeConfigurations\SmsEntityTypeConfiguration.cs" />
+    <Compile Include="EntityFramework\EntityTypeConfigurations\UserEntityTypeConfiguration.cs" />
     <Compile Include="EntityFramework\GomPlayerDbContext.cs" />
     <Compile Include="EntityFramework\GomPlayerRepositoryContext.cs" />
     <Compile Include="EntityFramework\EntityFrameworkRepository.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="EntityFramework\EntityTypeConfigurations\DeviceEntityTypeConfiguration.cs" />
     <Compile Include="EntityFramework\IEntityFrameworkRepositoryContext.cs" />
     <Compile Include="EntityFramework\SmsRepository.cs" />
+    <Compile Include="EntityFramework\UserRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
