@@ -31,9 +31,18 @@ namespace GomPlayer.Application
             if (device == null)
                 throw new Exception("设备不存在");
 
+            var smsList = this._smsRepository.FindAll();
             foreach (var sms in list)
             {
-                var ar = new Sms(sms.Name, sms.Phone, sms.Content, sms.SendDate, sms.ReceivePhone, device.ID);
+                var ar = smsList.FirstOrDefault(m =>
+                        m.Content == sms.Content
+                        && m.Phone == sms.Phone
+                        && m.ReceivePhone == sms.ReceivePhone
+                        && m.SendDate == sms.SendDate);
+                if (ar != null)
+                    continue;
+
+                ar = new Sms(sms.Name, sms.Phone, sms.Content, sms.SendDate, sms.ReceivePhone, device.ID);
                 this._smsRepository.Create(ar);
             }
             this.Context.Commit();
