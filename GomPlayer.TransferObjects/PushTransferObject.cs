@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tang.Infrastructure.Net.Push;
 
 namespace GomPlayer.TransferObjects
 {
@@ -13,6 +14,8 @@ namespace GomPlayer.TransferObjects
         public string Title { get; set; }
 
         public string Content { get; set; }
+
+        public string Icon_Res { get; set; }
 
         public string WebUrl { get; set; }
 

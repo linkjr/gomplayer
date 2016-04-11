@@ -37,6 +37,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tang.Infrastructure.Net">
+      <HintPath>..\..\..\Tang\Tang.Infrastructure\Tang.Infrastructure.Net\bin\Debug\Tang.Infrastructure.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceTransferObject.cs" />

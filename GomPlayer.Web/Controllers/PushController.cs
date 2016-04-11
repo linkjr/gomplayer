@@ -37,6 +37,7 @@ namespace GomPlayer.Web.Controllers
                 Token = model.Token,
                 Title = model.Title,
                 Content = model.Content,
+                Icon_Res = model.Icon_Res,
                 WebUrl = model.WebUrl,
                 ApkUrl = model.ApkUrl
             };

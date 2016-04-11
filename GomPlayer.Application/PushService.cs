@@ -27,13 +27,15 @@ namespace GomPlayer.Application
                     MessageType = MessageTypeOptions.Notice,
                     Title = dataObject.Title,
                     Content = dataObject.Content,
+                    Icon_Type = IconTypeOptions.Upload,
+                    Icon_Res = dataObject.Icon_Res,
                     Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
-                { 
-                    {"level" , 2 },
-                    {"weburl",  dataObject.WebUrl},
-                    {"apkurl", dataObject.ApkUrl}
-                }
+                    { 
+                        {"level" , 2 },
+                        {"weburl",  dataObject.WebUrl},
+                        {"apkurl", dataObject.ApkUrl}
+                    }
                 };
                 var msg = this.push.All(message);
             }
@@ -45,6 +47,8 @@ namespace GomPlayer.Application
                     MessageType = MessageTypeOptions.Notice,
                     Title = dataObject.Title,
                     Content = dataObject.Content,
+                    Icon_Type = IconTypeOptions.Upload,
+                    Icon_Res = dataObject.Icon_Res,
                     Activity = "com.gomkor.bine.MainActivity",
                     Args = new Dictionary<string, object>
                 { 

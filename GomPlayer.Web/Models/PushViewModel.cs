@@ -20,6 +20,10 @@ namespace GomPlayer.Web.Models
         [Required(ErrorMessage = "请输入{0}")]
         public string Content { get; set; }
 
+        [Display(Name = "应用图标")]
+        [Required(ErrorMessage = "请输入{0}")]
+        public string Icon_Res { get; set; }
+
         [Display(Name = "Web地址")]
         [Required(ErrorMessage = "请输入{0}")]
         public string WebUrl { get; set; }
