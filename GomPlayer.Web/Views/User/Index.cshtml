@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "用户列表";
+}
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("首页", "index", "home")</li>
+    <li>@Html.ActionLink("用户管理", "index")</li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div id="list" class="table-responsive">
+    @Html.Partial("_ListPartial")
+</div>
+<div class="modal fade modal-sm" id="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="modal-content">
+                    您确定要删除此条数据？
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#modal").on("show.bs.modal", function (e) {
+                var $this = $(e.relatedTarget);
+                var key = $this.data("key");
+                var ref = $this.data("ref");
+                $(".btn-warning").on("click", function () {
+                    $.post(ref, { id: key }, function (data) {
+                        if (data && data.result) {
+                            location.reload();
+                        }
+                    });
+                });
+            })
+
+            $(".modal").on("hide.bs.modal", function () {
+                $(".btn-warning").off("click");
+            })
+        })
+    </script>
+}
